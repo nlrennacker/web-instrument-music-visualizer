@@ -9,6 +9,8 @@ import {
   Music20,
 } from '@carbon/icons-react';
 
+import { useState } from 'react';
+
 // project imports
 import { DispatchAction } from './Reducer';
 import { AppState } from './State';
@@ -157,9 +159,15 @@ function SongsNav({ state, dispatch }: SideNavProps): JSX.Element {
   */
 
   const songs: List<any> = state.get('songs', List());
+  const [search, setSearch] = useState('')
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value)
+  }
   return (
     <Section title="Playlist">
-      {songs.map(song => (
+      <input onChange={handleChange}>
+      </input>
+      {songs.filter((item) => item.get('songTitle').toLowerCase().includes(search.toLowerCase()) || item.get('songArtist').toLowerCase().includes(search.toLowerCase())).map(song => (
         <div
           key={song.get('id')}
           className="f6 pointer underline flex items-center no-underline i dim"
@@ -168,7 +176,7 @@ function SongsNav({ state, dispatch }: SideNavProps): JSX.Element {
           }
         >
           <Music20 className="mr1" />
-          {song.get('songTitle')}
+          {song.get('songTitle')} by {song.get('songArtist')}
         </div>
       ))}
     </Section>

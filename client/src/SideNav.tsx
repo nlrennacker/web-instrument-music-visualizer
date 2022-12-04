@@ -10,7 +10,11 @@ import {
 } from '@carbon/icons-react';
 
 import { useState } from 'react';
+<<<<<<< HEAD
 import styles from "./search.module.css";
+=======
+
+>>>>>>> 638c2cb87d6b3f25f3a34802eff0d2461258144e
 // project imports
 import { DispatchAction } from './Reducer';
 import { AppState } from './State';

@@ -1,0 +1,41 @@
+.board{
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.key {
+  height: 100%;
+  width: 70px;
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.top {
+  background-color: white;
+  height: 20px;
+  width: 30%;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: #C0C0C0 solid 2px;
+}
+
+.bottom {
+  background-color: white;
+  height: 20px;
+  width: 30%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: #C0C0C0 solid 2px;
+}
+
+.colorSelecter{
+  display: flex;
+  justify-content: center;
+}

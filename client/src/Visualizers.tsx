@@ -6,6 +6,10 @@ import React, { useEffect, useMemo, useCallback } from 'react';
 
 type VisualizerDrawer = (p5: P5, analyzer: Tone.Analyser) => void;
 
+let fftVisualizer = function(): Tone.Analyser{
+  return new Tone.Analyser('waveform', 256)
+};
+
 interface VisualizerContainerProps {
   visualizer: Visualizer;
 }
@@ -22,9 +26,20 @@ export class Visualizer {
 
 export function VisualizerContainer({ visualizer }: VisualizerContainerProps) {
   const { name, draw } = visualizer;
+  
+  if(name == "nlrennacker"){
+    fftVisualizer = function(): Tone.Analyser{
+      return new Tone.Analyser('fft', 256)
+    };
+  }
+  else {
+    fftVisualizer = function(): Tone.Analyser{
+      return new Tone.Analyser('waveform', 256)
+    };
+  }
 
   const analyzer: Tone.Analyser = useMemo(
-    () => new Tone.Analyser('waveform', 256),
+    fftVisualizer,
     [],
   );
 
@@ -46,6 +61,7 @@ export function VisualizerContainer({ visualizer }: VisualizerContainerProps) {
   const setup = (p5: P5, canvasParentRef: Element) => {
     const width = window.innerWidth;
     const height = window.innerHeight / 2;
+
     p5.createCanvas(width, height).parent(canvasParentRef);
   };
 

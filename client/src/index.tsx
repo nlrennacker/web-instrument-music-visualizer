@@ -8,6 +8,7 @@ import App from './App';
 // CSS
 import './index.css';
 import './tachyons.css';
+import './style.css'
 
 
 /** ------------------------------------------------------------------------ **

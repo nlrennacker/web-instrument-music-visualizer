@@ -39,7 +39,7 @@ export function TromboneBlow({
             onMouseDown={() => synth?.triggerAttack(`${note}`)}
             onMouseUp={() => synth?.triggerRelease('+0.25')}
             className={classNames('dim pointer ph2 pv1 ba mr2 br1 fw7 bw1')}>
-                Note: {note}
+                {note}
         </div>
     );
 }

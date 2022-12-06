@@ -25,3 +25,6 @@ VALUES (6, 'Korobeiniki(Tetris)', 'E4 B4 C4 D4 C4 B4 A4 A4 C4 E4 D4 C4 B4 B4 C4 
 
 INSERT INTO songs (id, song_title, notes, song_artist) 
 VALUES (7, 'Moonlight Sonata ', 'A4 D4 F4 A4 D4 F4 A4 D4 F4 A4 D4 F4 A4 D4 F4 A4 D4 F4 A4 D4 F4 A4 D4 F4 A#4 D4 F4 A#4 D4 F4 A#4 D#4 G4 A#4 D#4 G4 ', 'Beethoven');
+
+INSERT INTO songs (id, song_title, notes, song_artist) 
+VALUES (8, 'Iron Man', 'D4 B4 D4 E4 E4 G4 F4 G4 F4 G4 F4 D4 D4 E4 E4', 'Black Sabbath');
